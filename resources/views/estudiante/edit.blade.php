@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 @section('content')
 
- <h3 class="panel-title">Nuevo Libro</h3>
+ <h1 class="panel-title">Nuevo Libro</h1>
 
 <form method="POST" action="{{ route('estudiante.update',$estudiante->id) }}"  role="form"> {{ csrf_field() }}
 	<input name="_method" type="hidden" value="PATCH">
