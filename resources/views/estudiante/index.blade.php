@@ -32,7 +32,7 @@
                         @endforeach
                         @else
                         <tr>
-                            <td>No hay registro !</td>
+                            <td>No hay registros !</td>
                         </tr>
                         @endif
                     </tbody>
