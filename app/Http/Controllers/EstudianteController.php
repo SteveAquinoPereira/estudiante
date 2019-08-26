@@ -15,8 +15,8 @@ class EstudianteController extends Controller
     public function index()
     {
         //
-        $estudiantes=Estudiante::orderBy('id','DESC')->paginate(3);
-        return view('Estudiante.index',compact('estudiantes')); 
+        $estudiantes=Estudiante::orderBy('id')->paginate(200);
+        return view('estudiante.index',compact('estudiantes')); 
     }
 
     /**
@@ -27,7 +27,7 @@ class EstudianteController extends Controller
     public function create()
     {
         //
-        return view('Estudiante.create');
+        return view('estudiante.create');
     }
 
     /**
