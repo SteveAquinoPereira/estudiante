@@ -4,6 +4,7 @@
         <h1>Lista estudiantes</h3>
             <a href="{{ route('estudiante.create') }}">Añadir Estudiante</a>
                     <table class="table table-bordred table-striped">
+                    {{--datos a mostrar --}}
                     <thead>
                     <th>nombre</th>
                     <th>apellido</th>
@@ -13,9 +14,11 @@
                     <th>eliminar</th>
                     </thead>
                     <tbody>
+                        {{--comprobando si existen estudiantes --}}
                         @if ($estudiantes->count())
                         @foreach ($estudiantes as $estudiante)
                             <tr>
+                                {{--datos de la bd --}}
                                 <td>{{$estudiante->nombre}}</td>
                                 <td>{{$estudiante->apellido}}</td>
                                 <td>{{$estudiante->cedula}}</td>
