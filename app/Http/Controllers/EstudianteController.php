@@ -14,7 +14,7 @@ class EstudianteController extends Controller
      */
     public function index()
     {
-        //
+        //ordenar los estudiantes por id, cantidad 200 est
         $estudiantes=Estudiante::orderBy('id')->paginate(200);
         return view('estudiante.index',compact('estudiantes')); 
     }
@@ -26,7 +26,7 @@ class EstudianteController extends Controller
      */
     public function create()
     {
-        //
+        //redirecciona a create
         return view('estudiante.create');
     }
 
@@ -38,7 +38,7 @@ class EstudianteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //valida los datos, y redirecciona a el index
         $this->validate($request,[ 'nombre'=>'required', 'apellido'=>'required', 'cedula'=>'required', 'edad'=>'required']);
         Estudiante::create($request->all());
         return redirect()->route('estudiante.index')->with('success','Registro creado satisfactoriamente');
@@ -65,7 +65,7 @@ class EstudianteController extends Controller
      */
     public function edit($id)
     {
-        //
+        //redirecciona a edit
         $estudiante=estudiante::find($id);
         return view('estudiante.edit',compact('estudiante'));
 
@@ -80,7 +80,7 @@ class EstudianteController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //valida los datos, y sobreescribe o actualiza los datos, redirecciona a el index
         $this->validate($request,[ 'nombre'=>'required', 'apellido'=>'required', 'cedula'=>'required', 'edad'=>'required']);
  
         estudiante::find($id)->update($request->all());
@@ -95,7 +95,7 @@ class EstudianteController extends Controller
      */
     public function destroy($id)
     {
-        //
+        //borra el usuario seleccionado
         Estudiante::find($id)->delete();
         return redirect()->route('estudiante.index')->with('success','Registro eliminado satisfactoriamente');
     }
