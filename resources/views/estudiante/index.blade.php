@@ -22,7 +22,7 @@
                                 <td>{{$estudiante->apellido}}</td>
                                 <td>{{$estudiante->cedula}}</td>
                                 <td>{{$estudiante->edad}}</td>
-                                <td><a href="{{action('EstudianteController@edit', $estudiante->id)}}" ></a></td>
+                                <td><a class="btn btn-primary btn-xs" href="{{action('EstudianteController@edit', $estudiante->id)}}" ><span class="glyphicon glyphicon-pencil"></span></a></td>
                                 <td><form action="{{action('EstudianteController@destroy', $estudiante->id)}}" method="post">
                                     {{csrf_field()}} <input name="_method" type="hidden" value="DELETE">
 
