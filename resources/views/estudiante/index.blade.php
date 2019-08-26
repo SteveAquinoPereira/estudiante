@@ -5,7 +5,7 @@
             <h1>Lista estudiantes</h3>
                 <a href="{{ route('estudiante.create') }}">Añadir Estudiante</a>
                 <div class="tabla">
-                    <table>
+                    <table class="table table-bordred table-striped">
                     <thead>
                         <th>nombre</th>
                         <th>apellido</th>
@@ -26,7 +26,7 @@
                                 <td><form action="{{action('EstudianteController@destroy', $estudiante->id)}}" method="post">
                                     {{csrf_field()}} <input name="_method" type="hidden" value="DELETE">
 
-                                    <button type="submit"></button> 
+                                    <button type="submit"><span class="glyphicon glyphicon-trash"></span></button> 
                                 </td>
                             </tr>
                         @endforeach
