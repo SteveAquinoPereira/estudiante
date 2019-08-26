@@ -1,18 +1,16 @@
 @extends('layouts.layout')
 @section('content')
-    <div class="row">
-        <section class="content">
-            <h1>Lista estudiantes</h3>
-                <a href="{{ route('estudiante.create') }}">Añadir Estudiante</a>
-                <div class="tabla">
+    <section class="content">
+        <h1>Lista estudiantes</h3>
+            <a href="{{ route('estudiante.create') }}">Añadir Estudiante</a>
                     <table class="table table-bordred table-striped">
                     <thead>
-                        <th>nombre</th>
-                        <th>apellido</th>
-                        <th>cedula</th>
-                        <th>edad</th>
-                        <th>editar</th>
-                        <th>eliminar</th>
+                    <th>nombre</th>
+                    <th>apellido</th>
+                    <th>cedula</th>
+                    <th>edad</th>
+                    <th>editar</th>
+                    <th>eliminar</th>
                     </thead>
                     <tbody>
                         @if ($estudiantes->count())
@@ -24,9 +22,8 @@
                                 <td>{{$estudiante->edad}}</td>
                                 <td><a class="btn btn-primary btn-xs" href="{{action('EstudianteController@edit', $estudiante->id)}}" ><span class="glyphicon glyphicon-pencil"></span></a></td>
                                 <td><form action="{{action('EstudianteController@destroy', $estudiante->id)}}" method="post">
-                                    {{csrf_field()}} <input name="_method" type="hidden" value="DELETE">
-
-                                    <button type="submit"><span class="glyphicon glyphicon-trash"></span></button> 
+                                {{csrf_field()}} <input name="_method" type="hidden" value="DELETE">
+                                <button type="submit"><span class="glyphicon glyphicon-trash"></span></button> 
                                 </td>
                             </tr>
                         @endforeach
@@ -37,8 +34,6 @@
                         @endif
                     </tbody>
                     </table>
-                </div>
 
-        </section>
-    </div>
+    </section>
 @endsection
