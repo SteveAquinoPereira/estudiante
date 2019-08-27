@@ -14,6 +14,6 @@
 
     <input type="submit"  value="Guardar" >
 
-    <a href="{{ route('estudiante.index') }}" >Atrás</a>
+    <a href="{{ route('estudiante.index') }}" >Regresar</a>
 </form>                                
 @endsection
