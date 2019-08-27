@@ -15,7 +15,7 @@ class EstudianteController extends Controller
     public function index()
     {
         //ordenar los estudiantes por id, cantidad 200 est
-        $estudiantes=Estudiante::orderBy('id')->paginate(200);
+        $estudiantes=Estudiante::orderBy('id', 'ASC')->paginate(200);
         return view('estudiante.index',compact('estudiantes')); 
     }
 
